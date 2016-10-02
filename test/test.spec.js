@@ -32,7 +32,7 @@ describe('Emoji-favicon', function() {
             var offset = 0;
 
             res.on('data', function (chunk) {
-                result.fill(chunk, offset);
+                chunk.copy(result, offset);
                 offset += chunk.length;
             });
 
@@ -40,7 +40,7 @@ describe('Emoji-favicon', function() {
                 try {
                     var file = fs.readFileSync(__dirname + '/../node_modules/emoji-images/pngs/smiley.png');
 
-                    assert.equal(Buffer.compare(result, file), 0, 'Images are equal');
+                    assert.ok(result.equals(file), 'Images are equal');
                 } catch (err) {
                     done(err);
                     return;
