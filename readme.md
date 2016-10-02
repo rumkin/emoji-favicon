@@ -31,7 +31,7 @@ Works both with express and connect.
 
 Emoji list at [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/).
 
-Based on [emoji-images](http://npmjs.org/package/emoji-images) package.
+Based on [emoji-img](http://npmjs.org/package/emoji-img) package.
 
 ## License
 

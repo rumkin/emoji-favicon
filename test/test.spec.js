@@ -38,7 +38,7 @@ describe('Emoji-favicon', function() {
 
             res.on('end', function() {
                 try {
-                    var file = fs.readFileSync(__dirname + '/../node_modules/emoji-images/pngs/smiley.png');
+                    var file = fs.readFileSync(__dirname + '/../node_modules/emoji-img/emojis/smiley.png');
 
                     assert.ok(result.equals(file), 'Images are equal');
                 } catch (err) {
@@ -49,5 +49,11 @@ describe('Emoji-favicon', function() {
             });
 
         });
+    });
+
+    it('Should throw if emoji not found', function() {
+        assert.throws(function() {
+            emojiFavicon('hahaha$');
+        }, /hahaha\$/, 'Throws an error');
     });
 });

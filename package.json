@@ -1,7 +1,7 @@
 {
   "name": "emoji-favicon",
   "description": "Emoji favicon middleware",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "main": "build/emoji-favicon.js",
   "scripts": {
     "build": "[ -d build ] && rm -rf build; cp -r src build",
@@ -17,10 +17,9 @@
     "emoji": "smiley"
   },
   "dependencies": {
-    "emoji-images": "~0.1.1"
+    "emoji-img": "^1.0.0"
   },
   "devDependencies": {
-    "chalk": "~0.5.1",
     "connect": "^3.2.0",
     "mocha": "^3.1.0"
   },
