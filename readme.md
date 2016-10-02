@@ -15,7 +15,7 @@ $ npm i emoji-favicon
 
 ## Usage
 
-Middleware get one string parameter. It should be emoji name. If such image not found it cause an error.
+Middleware has one argument. It should be emoji name. If emoji not found it throws an error.
 
 ```javascript
 var express = require('express');
