@@ -3,8 +3,8 @@
 var fs = require('fs');
 var path = require('path');
 
-var emojiDir = path.resolve(path.join(__dirname, '..', 'node_modules', 'emoji-images'));
-if (! fs.existsSync(emojiDir)) {
+var emojiDir = lookup(path.resolve(__dirname, '..'), path.join('node_modules', 'emoji-images'));
+if (! emojiDir) {
     throw new Error('Emoji favicon: emoji-images package not found.');
 }
 
@@ -79,4 +79,24 @@ function resolve (emoji) {
 function find (emoji) {
     var pathName = emojiDir + '/pngs/' + emoji + '.png';
     return fs.existsSync(pathName) ? pathName : null;
+}
+
+/**
+ * Directory lookup.
+ *
+ * @param  {string} dir      Target directory to look up.
+ * @param  {string} filepath File that should be insedi of one of ther parent dirs.
+ * @return {string|null}     If file not found returns null
+ */
+function lookup(dir, filepath) {
+    var parts = dir.split(path.sep);
+    for (let i = parts.length; i > 0; i--) {
+        let prefix = parts.slice(0, i);
+
+        let fullPath = path.join(...prefix, filepath);
+
+        if (fs.existsSync(fullPath)) {
+            return fullPath;
+        }
+    }
 }
