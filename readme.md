@@ -17,13 +17,13 @@ $ npm i emoji-favicon
 
 Middleware get one string parameter. It should be emoji name. If such image not found it cause an error.
 
-````
+```javascript
 var express = require('express');
 var emojiFavicon = require('emoji-favicon');
 
 express().use(emojiFavicon('smiley'));
 // ...
-````
+```
 
 Works both with express and connect.
 
@@ -32,3 +32,7 @@ Works both with express and connect.
 Emoji list at [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/).
 
 Based on [emoji-images](http://npmjs.org/package/emoji-images) package.
+
+## License
+
+MIT.
