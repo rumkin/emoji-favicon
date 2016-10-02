@@ -93,7 +93,7 @@ function lookup(dir, filepath) {
     for (let i = parts.length; i > 0; i--) {
         let prefix = parts.slice(0, i);
 
-        let fullPath = path.join(...prefix, filepath);
+        let fullPath = path.join(prefix.join(path.sep), filepath);
 
         if (fs.existsSync(fullPath)) {
             return fullPath;
