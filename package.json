@@ -1,0 +1,54 @@
+{
+  "name": "emoji-favicon",
+  "description": "Emoji favicon middleware",
+  "version": "0.2.0",
+  "main": "build/emoji-favicon.js",
+  "scripts": {
+    "build": "[ -d build ] && rm -rf build; cp -r src build",
+    "start": "npm run build && node example/server.js",
+    "cov": "npm run build && istanbul cover node_modules/mocha/bin/_mocha -- -u exports -R spec test/**.spec.js",
+    "test": "npm run build && mocha test/**.spec.js",
+    "prepublish": "npm run build"
+  },
+  "license": "MIT",
+  "author": "Rumkin <dev@rumk.in>",
+  "config": {
+    "port": 8080,
+    "emoji": "smiley"
+  },
+  "dependencies": {
+    "emoji-images": "~0.1.1"
+  },
+  "devDependencies": {
+    "chalk": "~0.5.1",
+    "connect": "^3.2.0",
+    "mocha": "^3.1.0"
+  },
+  "maintainers": [
+    "rumkin <dev@rumk.in>"
+  ],
+  "bin": {
+    "emoji-favicon": "cli.js"
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rumkin/emoji-favicon.git"
+  },
+  "keywords": [
+    "favicon",
+    "favicons",
+    "middleware",
+    "middlewares",
+    "express",
+    "connect",
+    "http"
+  ],
+  "bugs": {
+    "url": "https://github.com/rumkin/emoji-favicon/issues"
+  },
+  "homepage": "https://github.com/rumkin/emoji-favicon#readme"
+}
