@@ -28,7 +28,8 @@
   ],
   "directories": {
     "example": "example",
-    "test": "test"
+    "test": "test",
+    "lib": "src"
   },
   "repository": {
     "type": "git",
