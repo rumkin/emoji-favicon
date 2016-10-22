@@ -28,8 +28,10 @@
   ],
   "directories": {
     "example": "example",
-    "test": "test"
+    "test": "test",
+    "lib": "src"
   },
+  "files": ["build", "readme.md", "LICENSE"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rumkin/emoji-favicon.git"
