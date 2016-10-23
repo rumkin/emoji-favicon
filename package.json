@@ -29,7 +29,7 @@
   "directories": {
     "example": "example",
     "test": "test",
-    "lib": "src"
+    "lib": "build"
   },
   "files": ["build", "readme.md", "LICENSE"],
   "repository": {
